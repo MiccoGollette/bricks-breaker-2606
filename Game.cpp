@@ -125,5 +125,12 @@ void Game::CheckCollision()
 
 	// TODO #7 - If ball touches bottom of window, pause ball and display (render) defeat text with R to reset
 
-	
+	if (ball.y_position >= WINDOW_HEIGHT)
+	{
+		Game::ResetBall();
+
+		Console::SetCursorPosition(100, 100);
+		Console::ForegroundColor(ConsoleColor::Red);
+		std::cout << "DEFEAT! Press 'R' to play again.";
+	}
 }
